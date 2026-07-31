@@ -122,7 +122,7 @@ export default function PeriodicTable() {
   const allCategories = [...new Set(elements.map(el => el.category))];
 
   return (
-    <div className="w-full flex flex-col gap-8 px-8 py-8 animate-fade-in">
+    <div className="max-w-7xl mx-auto w-full flex flex-col gap-8 px-6 py-8 animate-fade-in">
       <div className="flex flex-col gap-2">
         <Text variant="h1" className="text-[#1d1d1f] font-extrabold tracking-tight">
           Periodic Table

@@ -4,7 +4,7 @@ import Text from "@/components/ui/Typography";
 
 export default function AtomInfoIndexPage() {
   return (
-    <main className="w-full min-h-[calc(100vh-64px)] flex items-center justify-center p-6 animate-fade-in">
+    <main className="w-full min-h-full flex items-center justify-center p-6 animate-fade-in">
       <div className="w-[420px] h-[340px] flex items-center justify-center">
         <Card className="flex flex-col justify-between items-center text-center p-8">
           {/* Header Icon */}

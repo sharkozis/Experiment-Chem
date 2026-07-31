@@ -75,7 +75,7 @@ export default function AtomInfoPage({ params }: PageProps) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)] gap-6 w-full animate-fade-in py-12 px-6">
+    <div className="flex flex-col items-center justify-center min-h-full gap-6 w-full animate-fade-in py-12 px-6">
       {/* Controls Header (Back) */}
       <div className="flex w-full max-w-[420px] justify-start items-center px-1">
         <Link
