@@ -1,0 +1,70 @@
+{
+  "H": {
+    "symbol": "H",
+    "shells": [1]
+  },
+  "He": {
+    "symbol": "He",
+    "shells": [2]
+  },
+  "Li": {
+    "symbol": "Li",
+    "shells": [2, 1]
+  },
+  "Be": {
+    "symbol": "Be",
+    "shells": [2, 2]
+  },
+  "C": {
+    "symbol": "C",
+    "shells": [2, 4]
+  },
+  "N": {
+    "symbol": "N",
+    "shells": [2, 5]
+  },
+  "O": {
+    "symbol": "O",
+    "shells": [2, 6]
+  },
+  "F": {
+    "symbol": "F",
+    "shells": [2, 7]
+  },
+  "Ne": {
+    "symbol": "Ne",
+    "shells": [2, 8]
+  },
+  "Na": {
+    "symbol": "Na",
+    "shells": [2, 8, 1]
+  },
+  "Mg": {
+    "symbol": "Mg",
+    "shells": [2, 8, 2]
+  },
+  "Al": {
+    "symbol": "Al",
+    "shells": [2, 8, 3]
+  },
+  "Si": {
+    "symbol": "Si",
+    "shells": [2, 8, 4]
+  },
+  "P": {
+    "symbol": "P",
+    "shells": [2, 8, 5]
+  },
+  "S": {
+    "symbol": "S",
+    "shells": [2, 8, 6]
+  },
+  "Cl": {
+    "symbol": "Cl",
+    "shells": [2, 8, 7]
+  },
+  "Ar": {
+    "symbol": "Ar",
+    "shells": [2, 8, 8]
+  }
+}
