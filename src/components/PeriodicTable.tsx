@@ -184,7 +184,7 @@ export default function PeriodicTable() {
       </div>
 
       {/* Legend / Key checkmark filters (Sticky floating container) */}
-      <div className="sticky bottom-6 z-30 mx-auto max-w-5xl w-full bg-white/80 backdrop-blur-md border border-zinc-200/50 rounded-2xl py-4 px-6 flex flex-wrap justify-center gap-x-6 gap-y-3 shadow-[0_8px_32px_rgba(0,0,0,0.06)] mt-8">
+      <div className="sticky bottom-6 z-30 mx-auto max-w-5xl w-full bg-white/80 backdrop-blur-md border border-zinc-200/50 rounded-2xl p-4 md:py-4 md:px-6 grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-3 md:flex md:flex-wrap md:justify-center md:gap-x-6 md:gap-y-3 shadow-[0_8px_32px_rgba(0,0,0,0.06)] mt-8">
         {allCategories.map((category) => {
           const classes = categoryClasses[category] || "bg-zinc-100 border-zinc-200 text-[#1d1d1f]";
           const bgClass = classes.split(" ").find(c => c.startsWith("bg-"));
@@ -201,9 +201,9 @@ export default function PeriodicTable() {
             <button
               key={category}
               onClick={() => toggleCategory(category)}
-              className="flex items-center gap-2 cursor-pointer hover:opacity-100 transition-all duration-200"
+              className="flex items-center gap-2 cursor-pointer hover:opacity-100 transition-all duration-200 w-full justify-start md:w-auto"
             >
-              <span className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${bgClass} ${borderClass} ${textClass} ${
+              <span className={`w-5 h-5 rounded border flex items-center justify-center transition-all shrink-0 ${bgClass} ${borderClass} ${textClass} ${
                 isChecked ? 'scale-110 ring-2 ring-brand/20' : 'opacity-80'
               }`}>
                 {isChecked && (
@@ -212,7 +212,7 @@ export default function PeriodicTable() {
                   </svg>
                 )}
               </span>
-              <span className={`text-[12px] md:text-[14px] font-semibold tracking-wide transition-colors duration-200 ${
+              <span className={`text-[12px] md:text-[14px] font-semibold tracking-wide transition-colors duration-200 text-left ${
                 isChecked ? 'text-zinc-900 font-bold' : 'text-zinc-500'
               }`}>
                 {label}

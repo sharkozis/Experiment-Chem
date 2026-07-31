@@ -18,8 +18,8 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-zinc-200/50">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between font-sans">
+      <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-zinc-200/50" suppressHydrationWarning>
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between font-sans" suppressHydrationWarning>
           {/* Left Side: Group Logo + Nav Links (Desktop) */}
           <div className="flex items-center gap-10">
             {/* Logo */}
@@ -98,6 +98,7 @@ export default function Navbar() {
         className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
+        suppressHydrationWarning
       >
         {/* Backdrop overlay */}
         <div 

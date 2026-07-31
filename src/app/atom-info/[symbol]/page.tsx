@@ -78,7 +78,7 @@ export default function AtomInfoPage({ params }: PageProps) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-full gap-2 md:gap-6 w-full animate-fade-in pt-4 md:pt-8 pb-8 px-6">
+    <div className="flex flex-col items-center justify-start min-h-full gap-2 w-full animate-fade-in pt-4 md:pt-8 pb-8 px-6">
       {/* Controls Header (Back) */}
       <div className="flex w-full max-w-[420px] justify-start items-center px-1">
         <Link
@@ -95,7 +95,7 @@ export default function AtomInfoPage({ params }: PageProps) {
       </div>
 
       {/* Cards Area (Swapping in-place smoothly with spacious margins and size) */}
-      <div className="relative w-full max-w-[436px] h-[416px] md:h-[636px] flex items-center justify-center mb-6 md:my-8 p-2">
+      <div className="relative w-full max-w-[436px] h-[416px] md:h-[636px] flex items-center justify-center mb-6 md:mb-8 p-2">
         {/* Info Card Container */}
         <div className={`absolute inset-2 transition-all duration-500 ease-out transform ${
           showAtom 
