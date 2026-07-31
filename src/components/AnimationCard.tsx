@@ -21,6 +21,18 @@ const shellColors = [
   { name: "O Shell", color: "#ff2d55", strokeLight: "rgba(255, 45, 85, 0.15)" },
 ];
 
+const getElectronRadius = (count: number, isActive: boolean) => {
+  let size = 6.5;
+  if (count > 18) {
+    size = 3.2;
+  } else if (count > 8) {
+    size = 4.5;
+  } else if (count > 2) {
+    size = 5.5;
+  }
+  return isActive ? size * 1.25 : size;
+};
+
 export default function AnimationCard({ element, showAtom, onToggleAtom }: AnimationCardProps) {
   const [activeShellIndex, setActiveShellIndex] = useState<number | null>(null);
   const [modelData, setModelData] = useState<{ shells: number[] } | null>(null);
@@ -112,8 +124,8 @@ export default function AnimationCard({ element, showAtom, onToggleAtom }: Anima
     >
       <Card className="flex flex-col justify-between">
         {/* SVG Center */}
-        <div className="relative flex items-center justify-center w-76 h-76 mx-auto bg-zinc-50 border border-zinc-100 rounded-2xl mt-4">
-          <svg className="w-68 h-68 animate-fade-in" viewBox="0 0 200 200">
+        <div className="relative flex items-center justify-center w-60 h-60 md:w-76 md:h-76 mx-auto bg-zinc-50 border border-zinc-100 rounded-2xl mt-2 md:mt-4">
+          <svg className="w-52 h-52 md:w-68 md:h-68 animate-fade-in" viewBox="0 0 200 200">
             {/* Orbits & Electrons */}
             {shells.map((electronsCount, shellIndex) => {
               const r = getRadius(shellIndex);
@@ -157,18 +169,22 @@ export default function AnimationCard({ element, showAtom, onToggleAtom }: Anima
                     className="animate-spin origin-center pointer-events-none"
                     style={{ animationDuration: `${8 + shellIndex * 4}s` }}
                   >
-                    {electrons.map((e, eIndex) => (
-                      <circle
-                        key={eIndex}
-                        cx={e.cx}
-                        cy={e.cy}
-                        r={isActive ? "7.5" : "6"}
-                        fill={shellConfig.color}
-                        stroke="white"
-                        strokeWidth="1.5"
-                        className="shadow-sm transition-all duration-200"
-                      />
-                    ))}
+                    {electrons.map((e, eIndex) => {
+                      const electronRadius = getElectronRadius(electronsCount, isActive);
+                      const strokeWidth = electronsCount > 8 ? 1 : 1.5;
+                      return (
+                        <circle
+                          key={eIndex}
+                          cx={e.cx}
+                          cy={e.cy}
+                          r={electronRadius}
+                          fill={shellConfig.color}
+                          stroke="white"
+                          strokeWidth={strokeWidth}
+                          className="shadow-sm transition-all duration-200"
+                        />
+                      );
+                    })}
                   </g>
                 </g>
               );
@@ -197,9 +213,9 @@ export default function AnimationCard({ element, showAtom, onToggleAtom }: Anima
         </div>
 
         {/* Bottom Row */}
-        <div className="flex flex-col gap-6 w-full border-t border-zinc-100 pt-6">
+        <div className="flex flex-col gap-3 md:gap-6 w-full border-t border-zinc-100 pt-3 md:pt-6">
           {/* Dynamic Shell Legend / Brief (With bidirectional hover highlight) */}
-          <div className="flex justify-center gap-3.5 flex-wrap px-2">
+          <div className="flex justify-center gap-2 md:gap-3.5 flex-wrap px-2">
             {shells.map((electronsCount, shellIndex) => {
               const shellConfig = shellColors[shellIndex % shellColors.length];
               const isActive = activeShellIndex === shellIndex;
@@ -208,7 +224,7 @@ export default function AnimationCard({ element, showAtom, onToggleAtom }: Anima
                   key={shellIndex}
                   onMouseEnter={() => setActiveShellIndex(shellIndex)}
                   onMouseLeave={() => setActiveShellIndex(null)}
-                  className={`flex items-center gap-1.5 rounded-lg py-1.5 px-3 border transition-all duration-200 cursor-pointer ${
+                  className={`flex items-center gap-1.5 rounded-lg py-1 px-2 md:py-1.5 md:px-3 border transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "bg-white border-zinc-300 scale-105 shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
                       : "bg-zinc-50 border-zinc-100/80 opacity-60 hover:opacity-100"
@@ -221,7 +237,7 @@ export default function AnimationCard({ element, showAtom, onToggleAtom }: Anima
                       transform: isActive ? "scale(1.2)" : "scale(1)"
                     }}
                   />
-                  <span className="text-[14px] font-semibold text-zinc-600 font-sans tracking-tight">
+                  <span className="text-xs md:text-[14px] font-semibold text-zinc-600 font-sans tracking-tight">
                     {shellConfig.name} ({electronsCount}e⁻)
                   </span>
                 </div>
@@ -230,7 +246,7 @@ export default function AnimationCard({ element, showAtom, onToggleAtom }: Anima
           </div>
 
           {onToggleAtom && (
-            <Button variant="action" onClick={onToggleAtom}>
+            <Button variant="action" className="py-1.5 md:py-2 pl-4 pr-1.5 md:pl-6 md:pr-2 text-xs md:text-[15px]" onClick={onToggleAtom}>
               Show Info
             </Button>
           )}

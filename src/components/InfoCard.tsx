@@ -31,7 +31,7 @@ export default function InfoCard({ element, showAtom, onToggleAtom }: InfoCardPr
       </div>
 
       {/* Center Element Symbol */}
-      <div className="relative flex flex-col items-center justify-center my-auto">
+      <div className="relative flex flex-col items-center justify-center my-4 md:my-auto">
         {/* Symbol */}
         <Text variant="symbol" className="font-sans font-black tracking-tight select-none text-[#1d1d1f]">
           {element.symbol}
@@ -42,30 +42,30 @@ export default function InfoCard({ element, showAtom, onToggleAtom }: InfoCardPr
       </div>
 
       {/* Bottom Info Row */}
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-2 md:gap-4">
         {/* Configuration */}
         <Badge variant="highlight">
           <span>⚡</span> {element.configuration}
         </Badge>
 
         {/* Particle Info */}
-        <div className="flex justify-between w-full border-t border-zinc-100 pt-4 text-xs font-semibold tracking-wider">
+        <div className="flex justify-between w-full border-t border-zinc-100 pt-3 md:pt-4 text-[10px] md:text-xs font-semibold tracking-wider">
           <div className="flex flex-col items-center">
             <Text variant="caption">Protons</Text>
-            <span className="text-base font-bold text-emerald-600 mt-0.5">+{element.protons}</span>
+            <span className="text-sm md:text-base font-bold text-emerald-600 mt-0.5">+{element.protons}</span>
           </div>
-          <div className="flex flex-col items-center border-x border-zinc-100 px-6">
+          <div className="flex flex-col items-center border-x border-zinc-100 px-4 sm:px-6">
             <Text variant="caption">Electrons</Text>
-            <span className="text-base font-bold text-[#ff3b30] mt-0.5">-{element.electrons}</span>
+            <span className="text-sm md:text-base font-bold text-[#ff3b30] mt-0.5">-{element.electrons}</span>
           </div>
           <div className="flex flex-col items-center">
             <Text variant="caption">Neutrons</Text>
-            <span className="text-base font-bold text-zinc-500 mt-0.5">{element.neutrons}</span>
+            <span className="text-sm md:text-base font-bold text-zinc-500 mt-0.5">{element.neutrons}</span>
           </div>
         </div>
 
         {/* View Element Button */}
-        <Button variant="action" onClick={onToggleAtom}>
+        <Button variant="action" className="py-1.5 md:py-2 pl-4 pr-1.5 md:pl-6 md:pr-2 text-xs md:text-[15px]" onClick={onToggleAtom}>
           Show Atom
         </Button>
       </div>

@@ -1,10 +1,34 @@
+'use client';
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Card from "@/components/ui/Card";
 import Text from "@/components/ui/Typography";
 
 export default function AtomInfoIndexPage() {
+  const router = useRouter();
+  const [redirecting, setRedirecting] = useState(true);
+
+  useEffect(() => {
+    const lastAtom = localStorage.getItem("lastSelectedAtom");
+    if (lastAtom) {
+      router.replace(`/atom-info/${lastAtom}`);
+    } else {
+      setRedirecting(false);
+    }
+  }, [router]);
+
+  if (redirecting) {
+    return (
+      <main className="w-full min-h-full flex items-center justify-center p-6">
+        <div className="w-12 h-12 border-4 border-zinc-200 border-t-brand rounded-full animate-spin" />
+      </main>
+    );
+  }
+
   return (
-    <main className="w-full min-h-full flex items-center justify-center p-6 animate-fade-in">
+    <main className="w-full min-h-full flex items-center justify-center pt-0 pb-6 px-6 animate-fade-in">
       <div className="w-[420px] h-[340px] flex items-center justify-center">
         <Card className="flex flex-col justify-between items-center text-center p-8">
           {/* Header Icon */}
