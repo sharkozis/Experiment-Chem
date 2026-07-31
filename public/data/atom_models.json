@@ -66,5 +66,405 @@
   "Ar": {
     "symbol": "Ar",
     "shells": [2, 8, 8]
-  }
+  },
+  "K": {
+  "symbol": "K",
+  "shells": [2, 8, 8, 1]
+},
+"Ca": {
+  "symbol": "Ca",
+  "shells": [2, 8, 8, 2]
+},
+"Sc": {
+  "symbol": "Sc",
+  "shells": [2, 8, 9, 2]
+},
+"Ti": {
+  "symbol": "Ti",
+  "shells": [2, 8, 10, 2]
+},
+"V": {
+  "symbol": "V",
+  "shells": [2, 8, 11, 2]
+},
+"Cr": {
+  "symbol": "Cr",
+  "shells": [2, 8, 13, 1]
+},
+"Mn": {
+  "symbol": "Mn",
+  "shells": [2, 8, 13, 2]
+},
+"Fe": {
+  "symbol": "Fe",
+  "shells": [2, 8, 14, 2]
+},
+"Co": {
+  "symbol": "Co",
+  "shells": [2, 8, 15, 2]
+},
+"Ni": {
+  "symbol": "Ni",
+  "shells": [2, 8, 16, 2]
+},
+"Cu": {
+  "symbol": "Cu",
+  "shells": [2, 8, 18, 1]
+},
+"Zn": {
+  "symbol": "Zn",
+  "shells": [2, 8, 18, 2]
+},
+"Ga": {
+  "symbol": "Ga",
+  "shells": [2, 8, 18, 3]
+},
+"Ge": {
+  "symbol": "Ge",
+  "shells": [2, 8, 18, 4]
+},
+"As": {
+  "symbol": "As",
+  "shells": [2, 8, 18, 5]
+},
+"Se": {
+  "symbol": "Se",
+  "shells": [2, 8, 18, 6]
+},
+"Br": {
+  "symbol": "Br",
+  "shells": [2, 8, 18, 7]
+},
+"Kr": {
+  "symbol": "Kr",
+  "shells": [2, 8, 18, 8]
+},
+"Rb": {
+  "symbol": "Rb",
+  "shells": [2, 8, 18, 8, 1]
+},
+"Sr": {
+  "symbol": "Sr",
+  "shells": [2, 8, 18, 8, 2]
+},
+"Y": {
+  "symbol": "Y",
+  "shells": [2, 8, 18, 9, 2]
+},
+"Zr": {
+  "symbol": "Zr",
+  "shells": [2, 8, 18, 10, 2]
+},
+"Nb": {
+  "symbol": "Nb",
+  "shells": [2, 8, 18, 12, 1]
+},
+"Mo": {
+  "symbol": "Mo",
+  "shells": [2, 8, 18, 13, 1]
+},
+"Tc": {
+  "symbol": "Tc",
+  "shells": [2, 8, 18, 13, 2]
+},
+"Ru": {
+  "symbol": "Ru",
+  "shells": [2, 8, 18, 15, 1]
+},
+"Rh": {
+  "symbol": "Rh",
+  "shells": [2, 8, 18, 16, 1]
+},
+"Pd": {
+  "symbol": "Pd",
+  "shells": [2, 8, 18, 18]
+},
+"Ag": {
+  "symbol": "Ag",
+  "shells": [2, 8, 18, 18, 1]
+},
+"Cd": {
+  "symbol": "Cd",
+  "shells": [2, 8, 18, 18, 2]
+},
+"In": {
+  "symbol": "In",
+  "shells": [2, 8, 18, 18, 3]
+},
+"Sn": {
+  "symbol": "Sn",
+  "shells": [2, 8, 18, 18, 4]
+},
+"Sb": {
+  "symbol": "Sb",
+  "shells": [2, 8, 18, 18, 5]
+},
+"Te": {
+  "symbol": "Te",
+  "shells": [2, 8, 18, 18, 6]
+},
+"I": {
+  "symbol": "I",
+  "shells": [2, 8, 18, 18, 7]
+},
+"Xe": {
+  "symbol": "Xe",
+  "shells": [2, 8, 18, 18, 8]
+},
+"Cs": {
+  "symbol": "Cs",
+  "shells": [2, 8, 18, 18, 8, 1]
+},
+"Ba": {
+  "symbol": "Ba",
+  "shells": [2, 8, 18, 18, 8, 2]
+},
+"La": {
+  "symbol": "La",
+  "shells": [2, 8, 18, 18, 9, 2]
+},
+"Ce": {
+  "symbol": "Ce",
+  "shells": [2, 8, 18, 19, 9, 2]
+},
+"Pr": {
+  "symbol": "Pr",
+  "shells": [2, 8, 18, 21, 8, 2]
+},
+"Nd": {
+  "symbol": "Nd",
+  "shells": [2, 8, 18, 22, 8, 2]
+},
+"Pm": {
+  "symbol": "Pm",
+  "shells": [2, 8, 18, 23, 8, 2]
+},
+"Sm": {
+  "symbol": "Sm",
+  "shells": [2, 8, 18, 24, 8, 2]
+},
+"Eu": {
+  "symbol": "Eu",
+  "shells": [2, 8, 18, 25, 8, 2]
+},
+"Gd": {
+  "symbol": "Gd",
+  "shells": [2, 8, 18, 25, 9, 2]
+},
+"Tb": {
+  "symbol": "Tb",
+  "shells": [2, 8, 18, 27, 8, 2]
+},
+"Dy": {
+  "symbol": "Dy",
+  "shells": [2, 8, 18, 28, 8, 2]
+},
+"Ho": {
+  "symbol": "Ho",
+  "shells": [2, 8, 18, 29, 8, 2]
+},
+"Er": {
+  "symbol": "Er",
+  "shells": [2, 8, 18, 30, 8, 2]
+},
+"Tm": {
+  "symbol": "Tm",
+  "shells": [2, 8, 18, 31, 8, 2]
+},
+"Yb": {
+  "symbol": "Yb",
+  "shells": [2, 8, 18, 32, 8, 2]
+},
+"Lu": {
+  "symbol": "Lu",
+  "shells": [2, 8, 18, 32, 9, 2]
+},
+"Hf": {
+  "symbol": "Hf",
+  "shells": [2, 8, 18, 32, 10, 2]
+},
+"Ta": {
+  "symbol": "Ta",
+  "shells": [2, 8, 18, 32, 11, 2]
+},
+"W": {
+  "symbol": "W",
+  "shells": [2, 8, 18, 32, 12, 2]
+},
+"Re": {
+  "symbol": "Re",
+  "shells": [2, 8, 18, 32, 13, 2]
+},
+"Os": {
+  "symbol": "Os",
+  "shells": [2, 8, 18, 32, 14, 2]
+},
+"Ir": {
+  "symbol": "Ir",
+  "shells": [2, 8, 18, 32, 15, 2]
+},
+"Pt": {
+  "symbol": "Pt",
+  "shells": [2, 8, 18, 32, 17, 1]
+},
+"Au": {
+  "symbol": "Au",
+  "shells": [2, 8, 18, 32, 18, 1]
+},
+"Hg": {
+  "symbol": "Hg",
+  "shells": [2, 8, 18, 32, 18, 2]
+},
+"Tl": {
+  "symbol": "Tl",
+  "shells": [2, 8, 18, 32, 18, 3]
+},
+"Pb": {
+  "symbol": "Pb",
+  "shells": [2, 8, 18, 32, 18, 4]
+},
+"Bi": {
+  "symbol": "Bi",
+  "shells": [2, 8, 18, 32, 18, 5]
+},
+"Po": {
+  "symbol": "Po",
+  "shells": [2, 8, 18, 32, 18, 6]
+},
+"At": {
+  "symbol": "At",
+  "shells": [2, 8, 18, 32, 18, 7]
+},
+"Rn": {
+  "symbol": "Rn",
+  "shells": [2, 8, 18, 32, 18, 8]
+},
+"Fr": {
+  "symbol": "Fr",
+  "shells": [2, 8, 18, 32, 18, 8, 1]
+},
+"Ra": {
+  "symbol": "Ra",
+  "shells": [2, 8, 18, 32, 18, 8, 2]
+},
+"Ac": {
+  "symbol": "Ac",
+  "shells": [2, 8, 18, 32, 18, 9, 2]
+},
+"Th": {
+  "symbol": "Th",
+  "shells": [2, 8, 18, 32, 18, 10, 2]
+},
+"Pa": {
+  "symbol": "Pa",
+  "shells": [2, 8, 18, 32, 20, 9, 2]
+},
+"U": {
+  "symbol": "U",
+  "shells": [2, 8, 18, 32, 21, 9, 2]
+},
+"Np": {
+  "symbol": "Np",
+  "shells": [2, 8, 18, 32, 22, 9, 2]
+},
+"Pu": {
+  "symbol": "Pu",
+  "shells": [2, 8, 18, 32, 24, 8, 2]
+},
+"Am": {
+  "symbol": "Am",
+  "shells": [2, 8, 18, 32, 25, 8, 2]
+},
+"Cm": {
+  "symbol": "Cm",
+  "shells": [2, 8, 18, 32, 25, 9, 2]
+},
+"Bk": {
+  "symbol": "Bk",
+  "shells": [2, 8, 18, 32, 27, 8, 2]
+},
+"Cf": {
+  "symbol": "Cf",
+  "shells": [2, 8, 18, 32, 28, 8, 2]
+},
+"Es": {
+  "symbol": "Es",
+  "shells": [2, 8, 18, 32, 29, 8, 2]
+},
+"Fm": {
+  "symbol": "Fm",
+  "shells": [2, 8, 18, 32, 30, 8, 2]
+},
+"Md": {
+  "symbol": "Md",
+  "shells": [2, 8, 18, 32, 31, 8, 2]
+},
+"No": {
+  "symbol": "No",
+  "shells": [2, 8, 18, 32, 32, 8, 2]
+},
+"Lr": {
+  "symbol": "Lr",
+  "shells": [2, 8, 18, 32, 32, 8, 3]
+},
+"Rf": {
+  "symbol": "Rf",
+  "shells": [2, 8, 18, 32, 32, 10, 2]
+},
+"Db": {
+  "symbol": "Db",
+  "shells": [2, 8, 18, 32, 32, 11, 2]
+},
+"Sg": {
+  "symbol": "Sg",
+  "shells": [2, 8, 18, 32, 32, 12, 2]
+},
+"Bh": {
+  "symbol": "Bh",
+  "shells": [2, 8, 18, 32, 32, 13, 2]
+},
+"Hs": {
+  "symbol": "Hs",
+  "shells": [2, 8, 18, 32, 32, 14, 2]
+},
+"Mt": {
+  "symbol": "Mt",
+  "shells": [2, 8, 18, 32, 32, 15, 2]
+},
+"Ds": {
+  "symbol": "Ds",
+  "shells": [2, 8, 18, 32, 32, 17, 1]
+},
+"Rg": {
+  "symbol": "Rg",
+  "shells": [2, 8, 18, 32, 32, 18, 1]
+},
+"Cn": {
+  "symbol": "Cn",
+  "shells": [2, 8, 18, 32, 32, 18, 2]
+},
+"Nh": {
+  "symbol": "Nh",
+  "shells": [2, 8, 18, 32, 32, 18, 3]
+},
+"Fl": {
+  "symbol": "Fl",
+  "shells": [2, 8, 18, 32, 32, 18, 4]
+},
+"Mc": {
+  "symbol": "Mc",
+  "shells": [2, 8, 18, 32, 32, 18, 5]
+},
+"Lv": {
+  "symbol": "Lv",
+  "shells": [2, 8, 18, 32, 32, 18, 6]
+},
+"Ts": {
+  "symbol": "Ts",
+  "shells": [2, 8, 18, 32, 32, 18, 7]
+},
+"Og": {
+  "symbol": "Og",
+  "shells": [2, 8, 18, 32, 32, 18, 8]
+}
 }

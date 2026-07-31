@@ -13,12 +13,17 @@ const categoryClasses: Record<string, string> = {
   "transition-metal": "bg-[#fffde7] hover:bg-[#fff9c4] border-[#fff59d] text-[#f57f17]",
   "halogen": "bg-[#e0f7fa] hover:bg-[#b2ebf2] border-[#80deea] text-[#006064]",
   "other-metal": "bg-[#eceff1] hover:bg-[#cfd8dc] border-[#b0bec5] text-[#263238]",
+  "post-transition": "bg-[#e8f5e9] hover:bg-[#c8e6c9] border-[#a5d6a7] text-[#1b5e20]",
+  "metalloid": "bg-[#f3e5f5] hover:bg-[#e1bee7] border-[#ce93d8] text-[#4a148c]",
+  "lanthanide": "bg-[#fce4ec] hover:bg-[#f8bbd0] border-[#f48fb1] text-[#880e4f]",
+  "actinide": "bg-[#fff8e1] hover:bg-[#ffecb3] border-[#ffe082] text-[#ff6f00]",
 };
 
 export default function PeriodicTable() {
   const [elements, setElements] = useState<ElementData[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [hoveredSeries, setHoveredSeries] = useState<"lanthanide" | "actinide" | null>(null);
 
   useEffect(() => {
     fetch("/data/periodic_table.json")
@@ -47,6 +52,75 @@ export default function PeriodicTable() {
     );
   }
 
+  // Separate main grid elements from lanthanides/actinides
+  const lanthanides = elements.filter(el => el.category === "lanthanide");
+  const actinides = elements.filter(el => el.category === "actinide");
+  const mainElements = elements.filter(el => el.category !== "lanthanide" && el.category !== "actinide");
+
+  const renderCell = (el: ElementData) => {
+    const classNames = categoryClasses[el.category] || "bg-zinc-100 hover:bg-zinc-200 border-zinc-200 text-[#1d1d1f]";
+    const formattedName = el.name.charAt(0) + el.name.slice(1).toLowerCase();
+    const isFilteredOut = selectedCategories.length > 0 && !selectedCategories.includes(el.category);
+
+    return (
+      <Link
+        key={el.symbol}
+        href={`/atom-info/${el.symbol}`}
+        style={{
+          gridColumnStart: el.column,
+          gridRowStart: el.row,
+        }}
+        className={`relative flex flex-col justify-between items-center w-full aspect-square p-1.5 rounded-xl border font-sans select-none transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer gap-1 ${classNames} ${
+          isFilteredOut ? "opacity-15 grayscale scale-95 pointer-events-none" : ""
+        }`}
+      >
+        <span className="w-full text-left text-[14px] font-extrabold leading-none opacity-80">
+          {el.atomicNumber}
+        </span>
+        <span className="text-3xl font-black text-center leading-none mt-0.5">
+          {el.symbol}
+        </span>
+        <span className="text-[10px] font-bold tracking-tight text-center leading-tight w-full opacity-90 break-words">
+          {formattedName}
+        </span>
+      </Link>
+    );
+  };
+
+  const renderSeriesCell = (el: ElementData, colIndex: number) => {
+    const classNames = categoryClasses[el.category] || "bg-zinc-100 hover:bg-zinc-200 border-zinc-200 text-[#1d1d1f]";
+    const formattedName = el.name.charAt(0) + el.name.slice(1).toLowerCase();
+    const isFilteredOut = selectedCategories.length > 0 && !selectedCategories.includes(el.category);
+
+    return (
+      <Link
+        key={el.symbol}
+        href={`/atom-info/${el.symbol}`}
+        style={{ gridColumnStart: colIndex }}
+        className={`relative flex flex-col justify-between items-center w-full aspect-square p-1.5 rounded-xl border font-sans select-none transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer gap-1 ${classNames} ${
+          isFilteredOut ? "opacity-15 grayscale scale-95 pointer-events-none" : ""
+        }`}
+      >
+        <span className="w-full text-left text-[14px] font-extrabold leading-none opacity-80">
+          {el.atomicNumber}
+        </span>
+        <span className="text-3xl font-black text-center leading-none mt-0.5">
+          {el.symbol}
+        </span>
+        <span className="text-[10px] font-bold tracking-tight text-center leading-tight w-full opacity-90 break-words">
+          {formattedName}
+        </span>
+      </Link>
+    );
+  };
+
+  // Sort lanthanides/actinides by atomic number
+  const sortedLanthanides = [...lanthanides].sort((a, b) => a.atomicNumber - b.atomicNumber);
+  const sortedActinides = [...actinides].sort((a, b) => a.atomicNumber - b.atomicNumber);
+
+  // Unique categories present in data for legend
+  const allCategories = [...new Set(elements.map(el => el.category))];
+
   return (
     <div className="w-full flex flex-col gap-8 px-8 py-8 animate-fade-in">
       <div className="flex flex-col gap-2">
@@ -58,56 +132,66 @@ export default function PeriodicTable() {
         </Text>
       </div>
 
+      {/* Main Grid (Rows 1-7, 18 columns) */}
       <div className="w-full">
-        <div className="w-full grid grid-cols-18 gap-2 p-6 bg-white rounded-2xl border border-zinc-200/50">
-          {elements.map((el) => {
-            const classNames = categoryClasses[el.category] || "bg-zinc-100 hover:bg-zinc-200 border-zinc-200 text-[#1d1d1f]";
-            const formattedName = el.name.charAt(0) + el.name.slice(1).toLowerCase();
-            const isFilteredOut = selectedCategories.length > 0 && !selectedCategories.includes(el.category);
+        <div className="w-full grid grid-cols-18 gap-1.5 p-5 bg-white rounded-2xl border border-zinc-200/50">
+          {mainElements.map((el) => renderCell(el))}
 
-            return (
-              <Link
-                key={el.symbol}
-                href={`/atom-info/${el.symbol}`}
-                style={{
-                  gridColumnStart: el.column,
-                  gridRowStart: el.row,
-                }}
-                className={`relative flex flex-col justify-between items-center w-full aspect-square p-1.5 rounded-xl border font-sans select-none transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer gap-1 ${classNames} ${
-                  isFilteredOut ? "opacity-15 grayscale scale-95 pointer-events-none" : ""
-                }`}
-              >
-                {/* Atomic Number */}
-                <span className="w-full text-left text-[14px] font-extrabold leading-none opacity-80">
-                  {el.atomicNumber}
-                </span>
+          {/* Lanthanide placeholder at row 6, col 3 */}
+          <div
+            style={{ gridColumnStart: 3, gridRowStart: 6 }}
+            className={`flex items-center justify-center w-full aspect-square rounded-xl border border-[#f48fb1] bg-[#fce4ec] text-[#880e4f] font-sans select-none cursor-pointer transition-all duration-200 ${hoveredSeries === 'lanthanide' ? 'scale-105 ring-2 ring-[#f48fb1]/40' : ''}`}
+            onMouseEnter={() => setHoveredSeries('lanthanide')}
+            onMouseLeave={() => setHoveredSeries(null)}
+          >
+            <span className="text-[10px] font-extrabold tracking-tight text-center leading-tight">57-71</span>
+          </div>
 
-                {/* Chemical Symbol */}
-                <span className="text-3xl font-black text-center leading-none mt-0.5">
-                  {el.symbol}
-                </span>
+          {/* Actinide placeholder at row 7, col 3 */}
+          <div
+            style={{ gridColumnStart: 3, gridRowStart: 7 }}
+            className={`flex items-center justify-center w-full aspect-square rounded-xl border border-[#ffe082] bg-[#fff8e1] text-[#ff6f00] font-sans select-none cursor-pointer transition-all duration-200 ${hoveredSeries === 'actinide' ? 'scale-105 ring-2 ring-[#ffe082]/40' : ''}`}
+            onMouseEnter={() => setHoveredSeries('actinide')}
+            onMouseLeave={() => setHoveredSeries(null)}
+          >
+            <span className="text-[10px] font-extrabold tracking-tight text-center leading-tight">89-103</span>
+          </div>
+        </div>
+      </div>
 
-                {/* Element Name */}
-                <span className="text-[10px] font-bold tracking-tight text-center leading-tight w-full opacity-90 break-words">
-                  {formattedName}
-                </span>
-              </Link>
-            );
-          })}
+      {/* Lanthanides & Actinides (Separated rows below) */}
+      <div className="w-full flex flex-col gap-1.5">
+        {/* Lanthanides Row */}
+        <div
+          className={`w-full grid grid-cols-15 gap-1.5 px-5 py-3 bg-white rounded-2xl border transition-all duration-200 ${hoveredSeries === 'lanthanide' ? 'border-[#f48fb1] ring-2 ring-[#f48fb1]/20 shadow-sm' : 'border-zinc-200/50'}`}
+          onMouseEnter={() => setHoveredSeries('lanthanide')}
+          onMouseLeave={() => setHoveredSeries(null)}
+        >
+          {sortedLanthanides.map((el, i) => renderSeriesCell(el, i + 1))}
+        </div>
+
+        {/* Actinides Row */}
+        <div
+          className={`w-full grid grid-cols-15 gap-1.5 px-5 py-3 bg-white rounded-2xl border transition-all duration-200 ${hoveredSeries === 'actinide' ? 'border-[#ffe082] ring-2 ring-[#ffe082]/20 shadow-sm' : 'border-zinc-200/50'}`}
+          onMouseEnter={() => setHoveredSeries('actinide')}
+          onMouseLeave={() => setHoveredSeries(null)}
+        >
+          {sortedActinides.map((el, i) => renderSeriesCell(el, i + 1))}
         </div>
       </div>
 
       {/* Legend / Key checkmark filters */}
       <div className="flex flex-wrap justify-center gap-6 mt-2">
-        {Object.entries(categoryClasses).map(([category, classes]) => {
+        {allCategories.map((category) => {
+          const classes = categoryClasses[category] || "bg-zinc-100 border-zinc-200 text-[#1d1d1f]";
           const bgClass = classes.split(" ").find(c => c.startsWith("bg-"));
-          const textClass = classes.split(" ").find(c => c.startsWith("text-"));
           const borderClass = classes.split(" ").find(c => c.startsWith("border-"));
+          const textClass = classes.split(" ").find(c => c.startsWith("text-"));
           const label = category
             .split("-")
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(" ");
-          
+
           const isChecked = selectedCategories.includes(category);
 
           return (

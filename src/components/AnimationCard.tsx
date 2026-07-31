@@ -96,6 +96,10 @@ export default function AnimationCard({ element, showAtom, onToggleAtom }: Anima
     "transition-metal": { fill: "#fffde7", text: "#f57f17", stroke: "#fff59d" },
     "halogen": { fill: "#e0f7fa", text: "#006064", stroke: "#80deea" },
     "other-metal": { fill: "#eceff1", text: "#263238", stroke: "#b0bec5" },
+    "post-transition": { fill: "#e8f5e9", text: "#1b5e20", stroke: "#a5d6a7" },
+    "metalloid": { fill: "#f3e5f5", text: "#4a148c", stroke: "#ce93d8" },
+    "lanthanide": { fill: "#fce4ec", text: "#880e4f", stroke: "#f48fb1" },
+    "actinide": { fill: "#fff8e1", text: "#ff6f00", stroke: "#ffe082" },
   };
 
   const nColor = nucleusColors[element.category] || { fill: "#eceff1", text: "#263238", stroke: "#b0bec5" };
