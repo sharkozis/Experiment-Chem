@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "element": "Na",
+    "massNumber": 23,
+    "protons": 11,
+    "neutrons": 12,
+    "electrons": 11,
+    "question": "If Sodium (Na) has a Mass Number of 23 and 11 Protons, how many Neutrons does it have?",
+    "options": ["11", "12", "23", "34"],
+    "answer": "12"
+  },
+  {
+    "id": 2,
+    "element": "C",
+    "massNumber": 12,
+    "protons": 6,
+    "neutrons": 6,
+    "electrons": 6,
+    "question": "If Carbon (C) has 6 Protons and 6 Neutrons, what is its Mass Number (A)?",
+    "options": ["6", "12", "18", "0"],
+    "answer": "12"
+  },
+  {
+    "id": 3,
+    "element": "O",
+    "massNumber": 16,
+    "protons": 8,
+    "neutrons": 8,
+    "electrons": 8,
+    "question": "In a neutral Oxygen atom (O), how many Electrons (E) are orbiting the nucleus?",
+    "options": ["8", "16", "24", "6"],
+    "answer": "8"
+  },
+  {
+    "id": 4,
+    "element": "N",
+    "massNumber": 14,
+    "protons": 7,
+    "neutrons": 7,
+    "electrons": 7,
+    "question": "If Nitrogen (N) has a Mass Number of 14 and 7 Neutrons, what is its Atomic Number (Z)?",
+    "options": ["7", "14", "21", "1"],
+    "answer": "7"
+  },
+  {
+    "id": 5,
+    "element": "Cl",
+    "massNumber": 35,
+    "protons": 17,
+    "neutrons": 18,
+    "electrons": 17,
+    "question": "How many Neutrons are in a Chlorine atom (Cl) that has a Mass Number of 35 and 17 Protons?",
+    "options": ["17", "18", "35", "52"],
+    "answer": "18"
+  }
+]
