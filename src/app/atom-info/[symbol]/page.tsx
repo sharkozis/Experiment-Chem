@@ -6,6 +6,7 @@ import InfoCard from "@/components/InfoCard";
 import AnimationCard from "@/components/AnimationCard";
 import Text from "@/components/ui/Typography";
 import Link from "next/link";
+import { setLastSelectedAtom } from "../state";
 
 interface PageProps {
   params: Promise<{ symbol: string }>;
@@ -26,7 +27,7 @@ export default function AtomInfoPage({ params }: PageProps) {
         const found = data.find((el) => el.symbol.toLowerCase() === targetSymbol);
         if (found) {
           setElement(found);
-          localStorage.setItem("lastSelectedAtom", targetSymbol);
+          setLastSelectedAtom(targetSymbol);
         }
         setLoading(false);
       })

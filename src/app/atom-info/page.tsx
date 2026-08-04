@@ -6,12 +6,14 @@ import Link from "next/link";
 import Card from "@/components/ui/Card";
 import Text from "@/components/ui/Typography";
 
+import { getLastSelectedAtom } from "./state";
+
 export default function AtomInfoIndexPage() {
   const router = useRouter();
   const [redirecting, setRedirecting] = useState(true);
 
   useEffect(() => {
-    const lastAtom = localStorage.getItem("lastSelectedAtom");
+    const lastAtom = getLastSelectedAtom();
     if (lastAtom) {
       router.replace(`/atom-info/${lastAtom}`);
     } else {
