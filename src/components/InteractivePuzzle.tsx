@@ -24,7 +24,6 @@ export default function InteractivePuzzle({ onComplete }: { onComplete: (xp: num
   const [maxIndexReached, setMaxIndexReached] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [wrongOptions, setWrongOptions] = useState<string[]>([]);
-  const [disappearedOptions, setDisappearedOptions] = useState<string[]>([]);
   const [shakeOption, setShakeOption] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [xpEarned, setXpEarned] = useState(0);
@@ -81,7 +80,6 @@ export default function InteractivePuzzle({ onComplete }: { onComplete: (xp: num
           setCurrentIndex((prev) => prev + 1);
           setSelectedOption(null);
           setWrongOptions([]);
-          setDisappearedOptions([]);
           setShakeOption(null);
           setIsCorrect(null);
         } else {
@@ -94,11 +92,11 @@ export default function InteractivePuzzle({ onComplete }: { onComplete: (xp: num
       setWrongOptions((prev) => [...prev, option]);
       setShakeOption(option);
 
-      // Shake for 600ms, then make it disappear
+      // Shake and show red for 600ms, then reset to normal style and hide error text
       setTimeout(() => {
         setShakeOption(null);
         setIsCorrect(null);
-        setDisappearedOptions((prev) => [...prev, option]);
+        setWrongOptions((prev) => prev.filter((o) => o !== option));
       }, 600);
     }
   };
@@ -322,7 +320,6 @@ export default function InteractivePuzzle({ onComplete }: { onComplete: (xp: num
             const isSelected = selectedOption === option;
             const isWrong = wrongOptions.includes(option);
             const isShaking = shakeOption === option;
-            const isDisappeared = disappearedOptions.includes(option) || (isAlreadySolved && option !== currentQuestion.answer);
 
             let buttonClass = "bg-white border-2 border-zinc-200 text-zinc-800 hover:bg-zinc-50 hover:border-zinc-300 shadow-sm";
             if ((isSelected && isCorrect) || (isAlreadySolved && option === currentQuestion.answer)) {
@@ -334,11 +331,11 @@ export default function InteractivePuzzle({ onComplete }: { onComplete: (xp: num
             return (
               <button
                 key={option}
-                disabled={isAlreadySolved || isCorrect === true}
+                disabled={isAlreadySolved || isCorrect === true || isWrong}
                 onClick={() => handleOptionClick(option)}
                 className={`w-full py-4 px-6 rounded-2xl font-black text-sm tracking-wide border-2 transition-all duration-200 ${
-                  isAlreadySolved || isCorrect === true ? "cursor-default" : "active:scale-[0.98] cursor-pointer"
-                } ${buttonClass} ${isShaking ? "animate-shake" : ""} ${isDisappeared ? "invisible pointer-events-none" : ""}`}
+                  isAlreadySolved || isCorrect === true || isWrong ? "cursor-default" : "active:scale-[0.98] cursor-pointer"
+                } ${buttonClass} ${isShaking ? "animate-shake" : ""}`}
               >
                 {option}
               </button>
