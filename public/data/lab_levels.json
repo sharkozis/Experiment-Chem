@@ -1,0 +1,434 @@
+[
+  {
+    "id": 1,
+    "title": "Level 1: Chemical Foundations",
+    "subtitle": "Basic safety, matter, and laboratory skills",
+    "isLocked": false,
+    "color": "from-blue-500/10 to-indigo-500/10 border-blue-200/50 text-blue-600",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Relationship of P, E, N, Z, A",
+        "description": "Learn how protons, electrons, neutrons, atomic number, and mass connect.",
+        "category": "Core Theory",
+        "time": "5 min",
+        "xp": 100
+      },
+      {
+        "id": 2,
+        "title": "Classification of Matter",
+        "description": "Distinguish between elements, compounds, and various types of mixtures.",
+        "category": "Matter Theory",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 3,
+        "title": "Metric Measurements",
+        "description": "Practice precise readings of liquid volumes, temperature, and analytical balances.",
+        "category": "Practical Skills",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 4,
+        "title": "Simple Thermal Distillation",
+        "description": "Set up a distillation rig to isolate pure water from a saline solution.",
+        "category": "Separation Lab",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 5,
+        "title": "Chemical vs Physical Changes",
+        "description": "Identify indicators of reaction: gas evolution, color shift, and precipitate.",
+        "category": "Reactivity",
+        "time": "12 min",
+        "xp": 120
+      },
+      {
+        "id": 6,
+        "title": "Paper Chromatography",
+        "description": "Separate ink pigments using moving phases and calculate precise Rf values.",
+        "category": "Separation Lab",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 7,
+        "title": "Conservation of Mass",
+        "description": "Verify that total mass remains constant during a precipitation reaction.",
+        "category": "Quantitative Lab",
+        "time": "12 min",
+        "xp": 120
+      },
+      {
+        "id": 8,
+        "title": "Lab Clean Up & Disposal",
+        "description": "Learn safe neutralization of chemicals and standard laboratory waste protocol.",
+        "category": "Lab Safety",
+        "time": "8 min",
+        "xp": 80
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Level 2: Reactions & Equations",
+    "subtitle": "Stoichiometry, synthesis, and double displacement",
+    "isLocked": true,
+    "color": "from-amber-500/5 to-orange-500/5 border-zinc-200/50 text-zinc-400",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Stoichiometry Calculations",
+        "description": "Practice balancing equations and calculating mole-to-mass conversions.",
+        "category": "Core Theory",
+        "time": "8 min",
+        "xp": 100
+      },
+      {
+        "id": 2,
+        "title": "Synthesis of Water",
+        "description": "Combine hydrogen and oxygen gas safely and determine the product yield.",
+        "category": "Simulation",
+        "time": "10 min",
+        "xp": 120
+      },
+      {
+        "id": 3,
+        "title": "Double Displacement Reactions",
+        "description": "Observe precipitate formation when mixing different aqueous salt solutions.",
+        "category": "Reactivity",
+        "time": "12 min",
+        "xp": 120
+      },
+      {
+        "id": 4,
+        "title": "Single Displacement Activity Series",
+        "description": "Place various metals in acid to establish their relative chemical activity.",
+        "category": "Reactivity",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 5,
+        "title": "Combustion Analysis",
+        "description": "Burn organic compounds to find their empirical and molecular formulas.",
+        "category": "Quantitative Lab",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 6,
+        "title": "Limiting Reactants Lab",
+        "description": "Determine the limiting reactant by measuring precipitate mass.",
+        "category": "Quantitative Lab",
+        "time": "15 min",
+        "xp": 150
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Level 3: Acids, Bases & pH",
+    "subtitle": "Titrations, indicators, and salt formations",
+    "isLocked": true,
+    "color": "from-emerald-500/5 to-teal-500/5 border-zinc-200/50 text-zinc-400",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Introduction to pH",
+        "description": "Understand the logarithmic scale of hydrogen ion concentration.",
+        "category": "Core Theory",
+        "time": "5 min",
+        "xp": 100
+      },
+      {
+        "id": 2,
+        "title": "Acid-Base Titration",
+        "description": "Use a buret to neutralize hydrochloric acid with sodium hydroxide.",
+        "category": "Quantitative Lab",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 3,
+        "title": "Natural Indicators",
+        "description": "Extract anthocyanin dye from red cabbage to test home solutions.",
+        "category": "Practical Skills",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 4,
+        "title": "Strong vs Weak Acids",
+        "description": "Compare dissociation constants and conductivity of different acids.",
+        "category": "Reactivity",
+        "time": "12 min",
+        "xp": 120
+      },
+      {
+        "id": 5,
+        "title": "Buffer Solutions",
+        "description": "Prepare a buffer system and test its resistance to pH changes.",
+        "category": "Separation Lab",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 6,
+        "title": "Salt Hydrolysis",
+        "description": "Predict and test the pH of aqueous solutions of various salts.",
+        "category": "Matter Theory",
+        "time": "8 min",
+        "xp": 80
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Level 4: States of Matter",
+    "subtitle": "Gas laws, phase changes, and kinetic theory",
+    "isLocked": true,
+    "color": "from-purple-500/5 to-pink-500/5 border-zinc-200/50 text-zinc-400",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Boyle's Law Simulation",
+        "description": "Manipulate pressure and volume of a gas at constant temperature.",
+        "category": "Simulation",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 2,
+        "title": "Charles's Law Experiment",
+        "description": "Measure how temperature affects gas volume at constant pressure.",
+        "category": "Simulation",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 3,
+        "title": "Ideal Gas Law Problems",
+        "description": "Perform calculations using PV=nRT in various real-world scenarios.",
+        "category": "Core Theory",
+        "time": "8 min",
+        "xp": 100
+      },
+      {
+        "id": 4,
+        "title": "Phase Diagrams",
+        "description": "Analyze triple points and critical points for different substances.",
+        "category": "Matter Theory",
+        "time": "12 min",
+        "xp": 120
+      },
+      {
+        "id": 5,
+        "title": "Heating Curve of Water",
+        "description": "Track temperature changes as ice transforms to steam.",
+        "category": "Quantitative Lab",
+        "time": "15 min",
+        "xp": 150
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Level 5: Atomic Structure",
+    "subtitle": "Quantum numbers, electron configuration, and orbits",
+    "isLocked": true,
+    "color": "from-cyan-500/5 to-sky-500/5 border-zinc-200/50 text-zinc-400",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Bohr Model Simulation",
+        "description": "Simulate electron orbits, absorption, and emission spectra.",
+        "category": "Simulation",
+        "time": "10 min",
+        "xp": 120
+      },
+      {
+        "id": 2,
+        "title": "Quantum Numbers Quiz",
+        "description": "Master principles like Pauli Exclusion and Hund's Rules.",
+        "category": "Core Theory",
+        "time": "8 min",
+        "xp": 100
+      },
+      {
+        "id": 3,
+        "title": "Electron Configurations",
+        "description": "Write spectroscopic notations for transition elements.",
+        "category": "Core Theory",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 4,
+        "title": "Flame Test Lab",
+        "description": "Excite metal cations to observe characteristic emission colors.",
+        "category": "Practical Skills",
+        "time": "12 min",
+        "xp": 120
+      },
+      {
+        "id": 5,
+        "title": "Periodic Trends Analyzers",
+        "description": "Compare atomic size, ionization energy, and electronegativity.",
+        "category": "Matter Theory",
+        "time": "12 min",
+        "xp": 120
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Level 6: Thermodynamics",
+    "subtitle": "Enthalpy, entropy, calorimetry, and free energy",
+    "isLocked": true,
+    "color": "from-red-500/5 to-rose-500/5 border-zinc-200/50 text-zinc-400",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Specific Heat Calorimetry",
+        "description": "Identify unknown metals by measuring temperature shifts in water.",
+        "category": "Quantitative Lab",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 2,
+        "title": "Hess's Law Verification",
+        "description": "Calculate heat of reaction indirectly using step-wise equations.",
+        "category": "Core Theory",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 3,
+        "title": "Endothermic vs Exothermic",
+        "description": "Perform hydration reactions and track thermal changes.",
+        "category": "Reactivity",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 4,
+        "title": "Gibbs Free Energy",
+        "description": "Determine reaction spontaneity using enthalpy and entropy values.",
+        "category": "Core Theory",
+        "time": "12 min",
+        "xp": 120
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Level 7: Electrochemistry",
+    "subtitle": "Galvanic cells, electrolysis, and redox reactions",
+    "isLocked": true,
+    "color": "from-violet-500/5 to-fuchsia-500/5 border-zinc-200/50 text-zinc-400",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Balancing Redox Reactions",
+        "description": "Practice half-reaction methods in acidic and basic solutions.",
+        "category": "Core Theory",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 2,
+        "title": "Galvanic Cells Assembly",
+        "description": "Set up a zinc-copper cell, measure voltage, and map ion flow.",
+        "category": "Simulation",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 3,
+        "title": "Electrochemical Series",
+        "description": "Rank redox couples by standard reduction potentials.",
+        "category": "Matter Theory",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 4,
+        "title": "Electrolysis of Water",
+        "description": "Decompose water into oxygen and hydrogen gas using current.",
+        "category": "Practical Skills",
+        "time": "12 min",
+        "xp": 120
+      },
+      {
+        "id": 5,
+        "title": "Faraday's Law of Electrolysis",
+        "description": "Determine mass deposition based on current magnitude and time.",
+        "category": "Quantitative Lab",
+        "time": "12 min",
+        "xp": 120
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Level 8: Organic Synthesis",
+    "subtitle": "Hydrocarbons, functional groups, and esters",
+    "isLocked": true,
+    "color": "from-lime-500/5 to-green-500/5 border-zinc-200/50 text-zinc-400",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Hydrocarbon Nomenclature",
+        "description": "Name alkanes, alkenes, alkynes and isomers using IUPAC rules.",
+        "category": "Core Theory",
+        "time": "10 min",
+        "xp": 100
+      },
+      {
+        "id": 2,
+        "title": "Functional Groups Matching",
+        "description": "Identify aldehydes, ketones, esters, and carboxylic acids.",
+        "category": "Practical Skills",
+        "time": "8 min",
+        "xp": 80
+      },
+      {
+        "id": 3,
+        "title": "Synthesis of Aspirin",
+        "description": "Acetylate salicylic acid and recrystallize the pure product.",
+        "category": "Separation Lab",
+        "time": "20 min",
+        "xp": 200
+      },
+      {
+        "id": 4,
+        "title": "Esterification Reaction",
+        "description": "React an alcohol and acid to produce distinct fruit fragrances.",
+        "category": "Simulation",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 5,
+        "title": "Saponification Lab",
+        "description": "Hydrolyze fats with sodium hydroxide to synthesize simple soap.",
+        "category": "Practical Skills",
+        "time": "15 min",
+        "xp": 150
+      },
+      {
+        "id": 6,
+        "title": "Fractional Distillation Quiz",
+        "description": "Test knowledge of boiling points and crude oil separations.",
+        "category": "Matter Theory",
+        "time": "10 min",
+        "xp": 100
+      }
+    ]
+  }
+]
