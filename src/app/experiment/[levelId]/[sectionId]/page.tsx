@@ -70,18 +70,7 @@ export default function SectionDetailPage({ params }: PageProps) {
       </div>
 
       {/* Title & Info Banner */}
-      <div className="flex flex-col gap-2 border-b border-zinc-100 pb-5">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-[10px] font-black text-brand bg-brand/10 px-2 py-0.5 rounded tracking-wider uppercase">
-            {section.category}
-          </span>
-          <span className="text-[10px] font-bold text-zinc-400 bg-zinc-100 px-2 py-0.5 rounded">
-            ⏱️ {section.time}
-          </span>
-          <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">
-            ✨ +{section.xp} XP
-          </span>
-        </div>
+      <div className="flex flex-col gap-2 border-b border-zinc-100 pb-5 items-center justify-center text-center">
         <Text variant="h1" className="font-sans font-black tracking-tight text-[#1d1d1f] mt-1">
           {section.title}
         </Text>
