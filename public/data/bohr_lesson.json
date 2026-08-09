@@ -1,0 +1,204 @@
+[
+  {
+    "stepId": 0,
+    "title": "Introduction",
+    "type": "intro",
+    "theory": "Welcome to the Bohr Atomic Model Lab! In 1913, Niels Bohr proposed a revolutionary model of the atom to explain atomic stability and the hydrogen spectrum. In this lesson, you will discover the behavior of electrons in shells, interact with energy absorption and emission transitions, calculate angular momentum, and explore the successes and limitations of the model. Click READY when you are ready to start!",
+    "interactionData": {
+      "buttonText": "Ready"
+    }
+  },
+  {
+    "stepId": 1,
+    "title": "1. Discrete Energy Levels",
+    "type": "interactive-shells",
+    "theory": "Bohr's first postulate states that electrons in an atom revolve around the nucleus only in certain selected circular paths called orbits or shells. These are numbered as n = 1, 2, 3, 4... or designated as K, L, M, N... shells. Each orbit has a fixed amount of energy, which is why they are called energy levels.",
+    "interactionData": {
+      "prompt": "Click on any orbit (n = 1, 2, 3, 4) in the diagram to move the electron and see its corresponding shell name and energy level label.",
+      "shells": [
+        { "n": 1, "name": "K shell", "energy": "Lowest (-13.6 eV)" },
+        { "n": 2, "name": "L shell", "energy": "Higher (-3.4 eV)" },
+        { "n": 3, "name": "M shell", "energy": "Higher (-1.5 eV)" },
+        { "n": 4, "name": "N shell", "energy": "Highest (-0.85 eV)" }
+      ]
+    }
+  },
+  {
+    "stepId": 2,
+    "title": "2. Stationary States",
+    "type": "choice-predict",
+    "theory": "While revolving in a particular orbit, an electron is in a stationary energy state. This means the electron neither radiates (loses) nor absorbs (gains) energy as long as it remains in its fixed circular orbit. This resolved the instability problem in Rutherford's model.",
+    "interactionData": {
+      "question": "What happens to the energy of an electron while it revolves in a fixed stable orbit (such as the L shell, n = 2)?",
+      "options": [
+        "It continuously loses energy and eventually falls into the nucleus.",
+        "It continuously absorbs energy and flies away from the atom.",
+        "Its energy remains constant, with no absorption or emission of radiation.",
+        "Its energy fluctuates randomly."
+      ],
+      "answer": "Its energy remains constant, with no absorption or emission of radiation.",
+      "explanation": "Bohr postulated that these orbits are 'stationary states' where classical electromagnetic radiation theory does not apply, meaning the electron does not emit or absorb energy while staying in the same orbit."
+    }
+  },
+  {
+    "stepId": 3,
+    "title": "3. Energy Absorption",
+    "type": "transition-absorption",
+    "theory": "Energy is absorbed in the form of electromagnetic radiation (photons) when an electron jumps from a lower energy level (orbit closer to the nucleus) to a higher energy level (orbit further from the nucleus).",
+    "interactionData": {
+      "prompt": "Click the 'Give Energy' button to project a photon of light at the electron in n = 1 (K shell) and watch it transition to n = 2 (L shell).",
+      "n_initial": 1,
+      "n_final": 2,
+      "question": "When the electron transitioned from n = 1 to n = 2, what did it do to the energy?",
+      "options": [
+        "It emitted energy.",
+        "It absorbed energy.",
+        "Its energy remained completely unchanged.",
+        "It destroyed energy."
+      ],
+      "answer": "It absorbed energy.",
+      "explanation": "Jumping to a higher energy level requires the input of energy, so the electron must absorb a photon whose energy exactly matches the difference between the two levels (ΔE = E2 - E1)."
+    }
+  },
+  {
+    "stepId": 4,
+    "title": "4. Energy Emission",
+    "type": "transition-emission",
+    "theory": "Energy is emitted (released) as a photon of light when an electron jumps down from a higher energy level (unstable excited state) to a lower energy level (ground or lower state).",
+    "interactionData": {
+      "prompt": "Click the 'Release Energy' button to trigger the electron to fall back from n = 2 (L shell) to n = 1 (K shell) and release a photon.",
+      "n_initial": 2,
+      "n_final": 1,
+      "question": "When the electron jumps from a higher orbit back to a lower orbit, what happens?",
+      "options": [
+        "It absorbs another photon.",
+        "It emits energy in the form of a photon of light.",
+        "Its mass decreases to zero.",
+        "It stays in both levels simultaneously."
+      ],
+      "answer": "It emits energy in the form of a photon of light.",
+      "explanation": "To return to a lower, more stable energy level, the electron must release the excess energy. This energy is radiated as a single photon of electromagnetic radiation with energy ΔE = E2 - E1 = hν."
+    }
+  },
+  {
+    "stepId": 5,
+    "title": "5. Angular Momentum (mvr)",
+    "type": "mvr-formula",
+    "theory": "Bohr's second postulate states that an electron can only revolve in orbits where its angular momentum (mvr) is an integral multiple of h/2π. The formula is: mvr = nh/2π. Here, m = mass of electron (9.11 x 10^-31 kg), v = electron velocity, r = orbit radius, n = principal quantum number (1, 2, 3...), and h = Planck's constant (6.626 x 10^-34 J·s).",
+    "interactionData": {
+      "formula": "mvr = nh/2π",
+      "question": "Calculate the angular momentum (mvr) of an electron revolving in the M shell (n = 3) of a hydrogen atom. (Take h = 6.626 x 10^-34 J·s, π = 3.1416)",
+      "options": [
+        "1.05 x 10^-34 J·s",
+        "2.11 x 10^-34 J·s",
+        "3.16 x 10^-34 J·s",
+        "4.22 x 10^-34 J·s"
+      ],
+      "answer": "3.16 x 10^-34 J·s",
+      "explanation": "Using mvr = nh/2π for n = 3: mvr = (3 * 6.626 x 10^-34) / (2 * 3.1416) = 19.878 x 10^-34 / 6.2832 ≈ 3.16 x 10^-34 J·s."
+    }
+  },
+  {
+    "stepId": 6,
+    "title": "6. Electron Transitions & Spectra",
+    "type": "spectra-simulation",
+    "theory": "When hydrogen gas absorbs energy, electrons jump to higher levels. When they fall back, they emit light at specific wavelengths. These emissions form the hydrogen line spectrum. In the Balmer series (transitions ending at n = 2), different jumps emit visible light: n = 3 → n = 2 emits Red (656 nm), n = 4 → n = 2 emits Blue-Green (486 nm), n = 5 → n = 2 emits Blue-Violet (434 nm), and n = 6 → n = 2 emits Violet (410 nm).",
+    "interactionData": {
+      "transitions": [
+        { "from": 3, "to": 2, "color": "#ef4444", "name": "Red (656 nm)" },
+        { "from": 4, "to": 2, "color": "#06b6d4", "name": "Blue-Green (486 nm)" },
+        { "from": 5, "to": 2, "color": "#6366f1", "name": "Blue-Violet (434 nm)" },
+        { "from": 6, "to": 2, "color": "#a855f7", "name": "Violet (410 nm)" }
+      ],
+      "question": "Which of the following transitions in a hydrogen atom emits the photon of visible light with the lowest energy (and thus the longest wavelength, Red color)?",
+      "options": [
+        "n = 2 → n = 1",
+        "n = 3 → n = 2",
+        "n = 4 → n = 2",
+        "n = 5 → n = 2"
+      ],
+      "answer": "n = 3 → n = 2",
+      "explanation": "The energy difference between n = 3 and n = 2 is the smallest among the visible Balmer transitions, yielding the lowest frequency and longest wavelength (656 nm, red light)."
+    }
+  },
+  {
+    "stepId": 7,
+    "title": "7. Successes & Limitations",
+    "type": "success-limitations",
+    "theory": "Bohr's model was a huge success because it explained atomic stability and quantitatively predicted the spectral lines of hydrogen. However, it has limits: it fails to explain the spectrum of multi-electron atoms (like Helium or Lithium), cannot explain the splitting of spectral lines in magnetic (Zeeman effect) or electric (Stark effect) fields, and assumes electrons move in flat circular orbits, violating modern quantum wave mechanics.",
+    "interactionData": {
+      "successes": [
+        "Explains why electrons do not fall into the nucleus (atomic stability).",
+        "Successfully calculates the radius of hydrogen orbits and explains hydrogen's line spectrum."
+      ],
+      "limitations": [
+        "Does not work for multi-electron atoms (He, Li, C, etc.).",
+        "Cannot explain the Zeeman or Stark splitting effects.",
+        "Cannot explain the fine structure of spectral lines.",
+        "Violates Heisenberg's Uncertainty Principle by assuming precise paths."
+      ],
+      "question": "Which of the following atoms/ions has a spectrum that CANNOT be explained by Bohr's atomic model?",
+      "options": [
+        "Hydrogen (H)",
+        "Helium ion (He+)",
+        "Lithium ion (Li2+)",
+        "Neutral Helium atom (He)"
+      ],
+      "answer": "Neutral Helium atom (He)",
+      "explanation": "Bohr's model is only applicable to single-electron species (hydrogen-like species). A neutral Helium atom (He) has 2 electrons, which introduces multi-electron repulsions that Bohr's theory cannot calculate."
+    }
+  },
+  {
+    "stepId": 8,
+    "title": "8. Final Challenge",
+    "type": "final-challenge",
+    "theory": "Let's put everything together in a quick final check! Answer these mixed questions to complete the Bohr Atomic Model lesson and claim your 150 XP.",
+    "interactionData": {
+      "questions": [
+        {
+          "qId": 1,
+          "question": "Which shell corresponds to the principal quantum number n = 2?",
+          "options": ["K shell", "L shell", "M shell", "N shell"],
+          "answer": "L shell",
+          "explanation": "The shells are named sequentially starting from n = 1: K (n=1), L (n=2), M (n=3), N (n=4)."
+        },
+        {
+          "qId": 2,
+          "question": "An electron transitions from n = 4 to n = 2. Which of the following is correct?",
+          "options": [
+            "It absorbs a photon of light.",
+            "It emits a photon of visible blue-green light.",
+            "It gains angular momentum.",
+            "It collides with the nucleus."
+          ],
+          "answer": "It emits a photon of visible blue-green light.",
+          "explanation": "Transitioning from a higher level (n=4) to a lower level (n=2) is emission, which produces a photon of visible light at 486 nm (blue-green) in the Balmer series."
+        },
+        {
+          "qId": 3,
+          "question": "What is the angular momentum (mvr) of an electron revolving in the K shell (n = 1) of a hydrogen atom?",
+          "options": [
+            "1.05 x 10^-34 J·s",
+            "2.11 x 10^-34 J·s",
+            "3.16 x 10^-34 J·s",
+            "0.53 x 10^-34 J·s"
+          ],
+          "answer": "1.05 x 10^-34 J·s",
+          "explanation": "Using mvr = nh/2π for n = 1: mvr = (1 * 6.626 x 10^-34) / (2 * 3.1416) = 6.626 x 10^-34 / 6.2832 ≈ 1.05 x 10^-34 J·s."
+        },
+        {
+          "qId": 4,
+          "question": "Bohr's atomic model assumes that electrons move in which geometric path?",
+          "options": [
+            "Three-dimensional spherical clouds",
+            "Dumbbell-shaped three-dimensional orbits",
+            "Two-dimensional flat circular orbits",
+            "Elongated elliptical orbits"
+          ],
+          "answer": "Two-dimensional flat circular orbits",
+          "explanation": "Bohr's model restricts electron movement to flat, two-dimensional circular orbits (like planets revolving around the Sun), which is one of its limitations compared to the modern 3D orbital cloud model."
+        }
+      ]
+    }
+  }
+]

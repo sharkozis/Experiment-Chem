@@ -4,6 +4,7 @@ import { useState, useEffect, use } from "react";
 import Text from "@/components/ui/Typography";
 import BackButton from "@/components/ui/BackButton";
 import InteractivePuzzle from "@/components/InteractivePuzzle";
+import BohrLesson from "@/components/BohrLesson";
 import { LevelData } from "@/components/LevelCard";
 import { SectionData } from "@/components/SectionCard";
 import { useRouter } from "next/navigation";
@@ -61,6 +62,7 @@ export default function SectionDetailPage({ params }: PageProps) {
   }
 
   const isInteractivePuzzle = levelId === "1" && sectionId === "1";
+  const isBohrLesson = levelId === "1" && sectionId === "2";
 
   return (
     <div className="max-w-4xl mx-auto w-full min-h-full py-6 px-6 animate-fade-in flex flex-col gap-6 font-sans">
@@ -81,6 +83,15 @@ export default function SectionDetailPage({ params }: PageProps) {
         {isInteractivePuzzle ? (
           <div className="w-full animate-fade-in">
             <InteractivePuzzle
+              onComplete={(xp) => {
+                alert(`Congratulations! You earned ${xp} XP!`);
+                router.push(`/experiment/${levelId}`);
+              }}
+            />
+          </div>
+        ) : isBohrLesson ? (
+          <div className="w-full animate-fade-in">
+            <BohrLesson
               onComplete={(xp) => {
                 alert(`Congratulations! You earned ${xp} XP!`);
                 router.push(`/experiment/${levelId}`);

@@ -16,11 +16,11 @@
       },
       {
         "id": 2,
-        "title": "Classification of Matter",
-        "description": "Distinguish between elements, compounds, and various types of mixtures.",
-        "category": "Matter Theory",
-        "time": "10 min",
-        "xp": 100
+        "title": "Bohr Atomic Model",
+        "description": "Explore orbits, electron energy transitions (absorption/emission), spectra, and angular momentum.",
+        "category": "Atomic Theory",
+        "time": "15 min",
+        "xp": 150
       },
       {
         "id": 3,
