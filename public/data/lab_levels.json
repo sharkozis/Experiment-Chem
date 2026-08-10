@@ -1,10 +1,18 @@
 [
   {
     "id": 1,
-    "title": "Level 1: Chemical Foundations",
-    "subtitle": "Basic safety, matter, and laboratory skills",
+    "title": "Level 1: Lets Know States of Matter",
+    "subtitle": "New curriculum coming soon",
     "isLocked": false,
     "color": "from-blue-500/10 to-indigo-500/10 border-blue-200/50 text-blue-600",
+    "sections": []
+  },
+  {
+    "id": 2,
+    "title": "Level 2: Chemical Foundations",
+    "subtitle": "Basic safety, matter, and laboratory skills",
+    "isLocked": true,
+    "color": "from-amber-500/5 to-orange-500/5 border-zinc-200/50 text-zinc-400",
     "sections": [
       {
         "id": 1,
@@ -73,8 +81,8 @@
     ]
   },
   {
-    "id": 2,
-    "title": "Level 2: Reactions & Equations",
+    "id": 3,
+    "title": "Level 3: Reactions & Equations",
     "subtitle": "Stoichiometry, synthesis, and double displacement",
     "isLocked": true,
     "color": "from-amber-500/5 to-orange-500/5 border-zinc-200/50 text-zinc-400",
@@ -130,8 +138,8 @@
     ]
   },
   {
-    "id": 3,
-    "title": "Level 3: Acids, Bases & pH",
+    "id": 4,
+    "title": "Level 4: Acids, Bases & pH",
     "subtitle": "Titrations, indicators, and salt formations",
     "isLocked": true,
     "color": "from-emerald-500/5 to-teal-500/5 border-zinc-200/50 text-zinc-400",
@@ -187,8 +195,8 @@
     ]
   },
   {
-    "id": 4,
-    "title": "Level 4: States of Matter",
+    "id": 5,
+    "title": "Level 5: States of Matter",
     "subtitle": "Gas laws, phase changes, and kinetic theory",
     "isLocked": true,
     "color": "from-purple-500/5 to-pink-500/5 border-zinc-200/50 text-zinc-400",
@@ -236,8 +244,8 @@
     ]
   },
   {
-    "id": 5,
-    "title": "Level 5: Atomic Structure",
+    "id": 6,
+    "title": "Level 6: Atomic Structure",
     "subtitle": "Quantum numbers, electron configuration, and orbits",
     "isLocked": true,
     "color": "from-cyan-500/5 to-sky-500/5 border-zinc-200/50 text-zinc-400",
@@ -285,8 +293,8 @@
     ]
   },
   {
-    "id": 6,
-    "title": "Level 6: Thermodynamics",
+    "id": 7,
+    "title": "Level 7: Thermodynamics",
     "subtitle": "Enthalpy, entropy, calorimetry, and free energy",
     "isLocked": true,
     "color": "from-red-500/5 to-rose-500/5 border-zinc-200/50 text-zinc-400",
@@ -326,8 +334,8 @@
     ]
   },
   {
-    "id": 7,
-    "title": "Level 7: Electrochemistry",
+    "id": 8,
+    "title": "Level 8: Electrochemistry",
     "subtitle": "Galvanic cells, electrolysis, and redox reactions",
     "isLocked": true,
     "color": "from-violet-500/5 to-fuchsia-500/5 border-zinc-200/50 text-zinc-400",
@@ -375,8 +383,8 @@
     ]
   },
   {
-    "id": 8,
-    "title": "Level 8: Organic Synthesis",
+    "id": 9,
+    "title": "Level 9: Organic Synthesis",
     "subtitle": "Hydrocarbons, functional groups, and esters",
     "isLocked": true,
     "color": "from-lime-500/5 to-green-500/5 border-zinc-200/50 text-zinc-400",

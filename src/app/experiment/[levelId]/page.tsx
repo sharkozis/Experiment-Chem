@@ -92,7 +92,7 @@ export default function LevelDetailPage({ params }: PageProps) {
             Level {level.id} is Locked
           </h3>
           <p className="text-[11px] text-zinc-400 font-semibold max-w-[280px] leading-relaxed mb-5">
-            To unlock virtual simulations and exams in this level, complete all 8 sections inside Level 1.
+            To unlock virtual simulations and exams in this level, complete all sections inside Level 1.
           </p>
           <Button
             variant="action"
