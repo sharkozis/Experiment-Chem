@@ -148,7 +148,7 @@ export default function InteractivePuzzle({ onComplete }: { onComplete: (xp: num
               Welcome to the Atom Foundations Lab!
             </h2>
             <p className="text-xs text-zinc-500 font-semibold leading-relaxed">
-              In this activity, you'll learn the key relationships between:
+              In this activity, you&apos;ll learn the key relationships between:
             </p>
           </div>
 

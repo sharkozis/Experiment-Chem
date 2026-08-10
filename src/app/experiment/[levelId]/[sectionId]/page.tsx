@@ -111,7 +111,7 @@ export default function SectionDetailPage({ params }: PageProps) {
                 Lab Simulation Under Construction
               </h3>
               <p className="text-xs text-zinc-400 font-semibold max-w-[360px] leading-relaxed">
-                The virtual laboratory procedure for "{section.title}" is currently being prepared. Check back soon for interactive models!
+                The virtual laboratory procedure for &quot;{section.title}&quot; is currently being prepared. Check back soon for interactive models!
               </p>
             </div>
             <div className="w-full bg-zinc-50 border border-zinc-100 rounded-2xl p-4 text-left">

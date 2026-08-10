@@ -17,7 +17,10 @@ export default function AtomInfoIndexPage() {
     if (lastAtom) {
       router.replace(`/atom-info/${lastAtom}`);
     } else {
-      setRedirecting(false);
+      const handle = setTimeout(() => {
+        setRedirecting(false);
+      }, 0);
+      return () => clearTimeout(handle);
     }
   }, [router]);
 

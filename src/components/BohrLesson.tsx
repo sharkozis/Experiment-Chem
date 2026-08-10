@@ -98,37 +98,41 @@ export default function BohrLesson({ onComplete }: { onComplete: (xp: number) =>
     const currentStep = steps[currentStepIndex];
     if (!currentStep) return;
     
-    // Reset interaction state
-    setSelectedOption(null);
-    setWrongOptions([]);
-    setShakeOption(null);
-    setIsCorrect(null);
+    const handle = setTimeout(() => {
+      // Reset interaction state
+      setSelectedOption(null);
+      setWrongOptions([]);
+      setShakeOption(null);
+      setIsCorrect(null);
 
-    // Visual setup depending on step type
-    if (currentStep.type === "interactive-shells") {
-      setElectronOrbit(1);
-      setSelectedShellInfo(currentStep.interactionData.shells?.[0] || null);
-    } else if (currentStep.type === "transition-absorption") {
-      setElectronOrbit(1);
-      setTransitionType('idle');
-    } else if (currentStep.type === "transition-emission") {
-      setElectronOrbit(2);
-      setTransitionType('idle');
-    } else if (currentStep.type === "mvr-formula") {
-      setElectronOrbit(3);
-    } else if (currentStep.type === "spectra-simulation") {
-      setElectronOrbit(3);
-      setSpectralHighlight(null);
-    } else if (currentStep.type === "success-limitations") {
-      setElectronOrbit(1);
-    } else if (currentStep.type === "final-challenge") {
-      setElectronOrbit(1);
-      setChallengeIndex(0);
-      setChallengeSelectedOption(null);
-      setChallengeWrongOptions([]);
-      setChallengeShakeOption(null);
-      setChallengeIsCorrect(null);
-    }
+      // Visual setup depending on step type
+      if (currentStep.type === "interactive-shells") {
+        setElectronOrbit(1);
+        setSelectedShellInfo(currentStep.interactionData.shells?.[0] || null);
+      } else if (currentStep.type === "transition-absorption") {
+        setElectronOrbit(1);
+        setTransitionType('idle');
+      } else if (currentStep.type === "transition-emission") {
+        setElectronOrbit(2);
+        setTransitionType('idle');
+      } else if (currentStep.type === "mvr-formula") {
+        setElectronOrbit(3);
+      } else if (currentStep.type === "spectra-simulation") {
+        setElectronOrbit(3);
+        setSpectralHighlight(null);
+      } else if (currentStep.type === "success-limitations") {
+        setElectronOrbit(1);
+      } else if (currentStep.type === "final-challenge") {
+        setElectronOrbit(1);
+        setChallengeIndex(0);
+        setChallengeSelectedOption(null);
+        setChallengeWrongOptions([]);
+        setChallengeShakeOption(null);
+        setChallengeIsCorrect(null);
+      }
+    }, 0);
+
+    return () => clearTimeout(handle);
   }, [currentStepIndex, steps]);
 
   if (loading) {
@@ -536,7 +540,7 @@ export default function BohrLesson({ onComplete }: { onComplete: (xp: number) =>
           {/* Theory Text */}
           <div className="flex flex-col gap-1.5">
             <span className="text-[9px] font-extrabold text-zinc-400 uppercase tracking-widest">
-              Niels Bohr's Postulates
+              Niels Bohr&apos;s Postulates
             </span>
             <h3 className="text-sm font-extrabold text-zinc-900 tracking-tight leading-tight">
               {currentStep.title}

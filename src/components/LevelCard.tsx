@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { SectionData } from "./SectionCard";
 
 export interface LevelData {
   id: number;
@@ -9,7 +10,7 @@ export interface LevelData {
   subtitle: string;
   isLocked: boolean;
   color: string;
-  sections: any[];
+  sections: SectionData[];
 }
 
 interface LevelCardProps {

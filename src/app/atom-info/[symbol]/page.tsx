@@ -67,7 +67,7 @@ export default function AtomInfoPage({ params }: PageProps) {
       <div className="text-center flex flex-col gap-4 items-center">
         <Text variant="h2" className="text-zinc-900">Element Not Found</Text>
         <Text variant="body" className="text-zinc-500">
-          The element symbol "{symbol}" could not be found in our database.
+          The element symbol &quot;{symbol}&quot; could not be found in our database.
         </Text>
         <Link
           href="/periodic-table"

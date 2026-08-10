@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Level 1: Lets Know States of Matter",
     "subtitle": "New curriculum coming soon",
-    "isLocked": false,
+    "isLocked": true,
     "color": "from-blue-500/10 to-indigo-500/10 border-blue-200/50 text-blue-600",
     "sections": []
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Level 2: Chemical Foundations",
     "subtitle": "Basic safety, matter, and laboratory skills",
-    "isLocked": true,
+    "isLocked": false,
     "color": "from-amber-500/5 to-orange-500/5 border-zinc-200/50 text-zinc-400",
     "sections": [
       {
