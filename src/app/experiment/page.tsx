@@ -3,21 +3,20 @@
 import { useState, useEffect } from "react";
 import Text from "@/components/ui/Typography";
 import LevelCard, { LevelData } from "@/components/LevelCard";
+import labLevelsData from "@/../public/data/lab_levels.json";
 
 export default function ExperimentPage() {
-  const [levels, setLevels] = useState<LevelData[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [levels, setLevels] = useState<LevelData[]>(labLevelsData as LevelData[]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch("/data/lab_levels.json")
       .then((res) => res.json())
       .then((data: LevelData[]) => {
         setLevels(data);
-        setLoading(false);
       })
       .catch((err) => {
         console.error("Failed to load levels data:", err);
-        setLoading(false);
       });
   }, []);
 

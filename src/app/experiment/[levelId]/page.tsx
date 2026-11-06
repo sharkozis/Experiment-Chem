@@ -1,47 +1,26 @@
-'use client';
-
-import { useState, useEffect, use } from "react";
 import Text from "@/components/ui/Typography";
 import BackButton from "@/components/ui/BackButton";
 import SectionCard, { SectionData } from "@/components/SectionCard";
 import { LevelData } from "@/components/LevelCard";
 import Button from "@/components/ui/Button";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import labLevelsData from "@/../public/data/lab_levels.json";
 
 interface PageProps {
   params: Promise<{ levelId: string }>;
 }
 
-export default function LevelDetailPage({ params }: PageProps) {
-  const { levelId } = use(params);
-  const router = useRouter();
-  
-  const [level, setLevel] = useState<LevelData | null>(null);
-  const [loading, setLoading] = useState(true);
+export async function generateStaticParams() {
+  return (labLevelsData as LevelData[]).map((level) => ({
+    levelId: String(level.id),
+  }));
+}
 
-  useEffect(() => {
-    fetch("/data/lab_levels.json")
-      .then((res) => res.json())
-      .then((data: LevelData[]) => {
-        const found = data.find((l) => l.id === parseInt(levelId, 10));
-        if (found) {
-          setLevel(found);
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to load level details:", err);
-        setLoading(false);
-      });
-  }, [levelId]);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="w-10 h-10 border-4 border-zinc-200 border-t-brand rounded-full animate-spin" />
-      </div>
-    );
-  }
+export default async function LevelDetailPage({ params }: PageProps) {
+  const { levelId } = await params;
+  const numId = parseInt(levelId.replace(/\D/g, ""), 10) || parseInt(levelId, 10);
+  const levels = labLevelsData as LevelData[];
+  const level = levels.find((l) => l.id === numId);
 
   if (!level) {
     return (
@@ -94,13 +73,14 @@ export default function LevelDetailPage({ params }: PageProps) {
           <p className="text-[11px] text-zinc-400 font-semibold max-w-[280px] leading-relaxed mb-5">
             To unlock virtual simulations and exams in this level, complete all sections inside Level 1.
           </p>
-          <Button
-            variant="action"
-            className="py-1.5 px-6 text-xs w-auto pl-5 pr-1.5 shadow-[0_2px_8px_rgba(0,113,227,0.15)]"
-            onClick={() => router.push("/experiment/1")}
-          >
-            Go to Level 1
-          </Button>
+          <Link href="/experiment/1" className="inline-block">
+            <Button
+              variant="action"
+              className="py-1.5 px-6 text-xs w-auto pl-5 pr-1.5 shadow-[0_2px_8px_rgba(0,113,227,0.15)]"
+            >
+              Go to Level 1
+            </Button>
+          </Link>
         </div>
       ) : (
         /* Sections list in full view grid */

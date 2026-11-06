@@ -8,6 +8,7 @@ import BohrLesson from "@/components/BohrLesson";
 import { LevelData } from "@/components/LevelCard";
 import { SectionData } from "@/components/SectionCard";
 import { useRouter } from "next/navigation";
+import labLevelsData from "@/../public/data/lab_levels.json";
 
 interface PageProps {
   params: Promise<{ levelId: string; sectionId: string }>;
@@ -17,29 +18,41 @@ export default function SectionDetailPage({ params }: PageProps) {
   const { levelId, sectionId } = use(params);
   const router = useRouter();
 
-  const [level, setLevel] = useState<LevelData | null>(null);
-  const [section, setSection] = useState<SectionData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const numLevelId = parseInt(levelId.replace(/\D/g, ""), 10) || parseInt(levelId, 10);
+  const numSectionId = parseInt(sectionId.replace(/\D/g, ""), 10) || parseInt(sectionId, 10);
+
+  const [level, setLevel] = useState<LevelData | null>(() => {
+    const levels = labLevelsData as LevelData[];
+    return levels.find((l) => l.id === numLevelId) || null;
+  });
+  const [section, setSection] = useState<SectionData | null>(() => {
+    const levels = labLevelsData as LevelData[];
+    const foundLevel = levels.find((l) => l.id === numLevelId);
+    return foundLevel?.sections.find((s) => s.id === numSectionId) || null;
+  });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("/data/lab_levels.json")
-      .then((res) => res.json())
-      .then((data: LevelData[]) => {
-        const foundLevel = data.find((l) => l.id === parseInt(levelId, 10));
-        if (foundLevel) {
-          setLevel(foundLevel);
-          const foundSection = foundLevel.sections.find((s) => s.id === parseInt(sectionId, 10));
-          if (foundSection) {
-            setSection(foundSection);
+    if (!level || !section) {
+      fetch("/data/lab_levels.json")
+        .then((res) => res.json())
+        .then((data: LevelData[]) => {
+          const foundLevel = data.find((l) => l.id === numLevelId);
+          if (foundLevel) {
+            setLevel(foundLevel);
+            const foundSection = foundLevel.sections.find((s) => s.id === numSectionId);
+            if (foundSection) {
+              setSection(foundSection);
+            }
           }
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to load section details:", err);
-        setLoading(false);
-      });
-  }, [levelId, sectionId]);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error("Failed to load section details:", err);
+          setLoading(false);
+        });
+    }
+  }, [numLevelId, numSectionId, level, section]);
 
   if (loading) {
     return (
@@ -61,8 +74,8 @@ export default function SectionDetailPage({ params }: PageProps) {
     );
   }
 
-  const isInteractivePuzzle = levelId === "1" && sectionId === "1";
-  const isBohrLesson = levelId === "1" && sectionId === "2";
+  const isInteractivePuzzle = (numLevelId === 1 || numLevelId === 2) && numSectionId === 1;
+  const isBohrLesson = (numLevelId === 1 || numLevelId === 2) && numSectionId === 2;
 
   return (
     <div className="max-w-4xl mx-auto w-full min-h-full py-6 px-6 animate-fade-in flex flex-col gap-6 font-sans">
