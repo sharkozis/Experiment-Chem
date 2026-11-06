@@ -5,9 +5,11 @@ import Text from "@/components/ui/Typography";
 import BackButton from "@/components/ui/BackButton";
 import InteractivePuzzle from "@/components/InteractivePuzzle";
 import BohrLesson from "@/components/BohrLesson";
+import StatesOfMatterLesson from "@/components/StatesOfMatterLesson";
 import { LevelData } from "@/components/LevelCard";
 import { SectionData } from "@/components/SectionCard";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import labLevelsData from "@/../public/data/lab_levels.json";
 
 interface PageProps {
@@ -74,8 +76,9 @@ export default function SectionDetailPage({ params }: PageProps) {
     );
   }
 
-  const isInteractivePuzzle = (numLevelId === 1 || numLevelId === 2) && numSectionId === 1;
-  const isBohrLesson = (numLevelId === 1 || numLevelId === 2) && numSectionId === 2;
+  const isStatesOfMatter = numLevelId === 1 && numSectionId === 1;
+  const isInteractivePuzzle = numLevelId === 2 && numSectionId === 1;
+  const isBohrLesson = numLevelId === 2 && numSectionId === 2;
 
   return (
     <div className="max-w-4xl mx-auto w-full min-h-full py-6 px-6 animate-fade-in flex flex-col gap-6 font-sans">
@@ -93,7 +96,16 @@ export default function SectionDetailPage({ params }: PageProps) {
 
       {/* Main Experiment Container */}
       <div className="w-full flex flex-col items-center justify-center">
-        {isInteractivePuzzle ? (
+        {isStatesOfMatter ? (
+          <div className="w-full animate-fade-in flex justify-center">
+            <StatesOfMatterLesson
+              onComplete={(xp) => {
+                toast.success(`Congratulations! You completed the lesson and earned ${xp} XP!`);
+                router.push(`/experiment/${levelId}`);
+              }}
+            />
+          </div>
+        ) : isInteractivePuzzle ? (
           <div className="w-full animate-fade-in">
             <InteractivePuzzle
               onComplete={(xp) => {

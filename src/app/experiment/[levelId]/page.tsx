@@ -88,11 +88,29 @@ export default async function LevelDetailPage({ params }: PageProps) {
           <Text variant="caption" className="uppercase tracking-wider font-extrabold text-[10px] text-zinc-400 px-1">
             LEVEL {level.id} CONTENTS
           </Text>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {level.sections.map((section: SectionData) => (
-              <SectionCard key={section.id} levelId={level.id} section={section} />
-            ))}
-          </div>
+          {level.sections && level.sections.length > 0 ? (
+            <div className={`grid gap-4 ${level.sections.length === 1 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"}`}>
+              {level.sections.map((section: SectionData) => (
+                <SectionCard key={section.id} levelId={level.id} section={section} />
+              ))}
+            </div>
+          ) : (
+            <div className="w-full border border-zinc-200/60 rounded-3xl bg-white p-8 md:p-12 text-center shadow-sm flex flex-col items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-brand shadow-sm">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+              </div>
+              <div className="flex flex-col gap-1">
+                <h3 className="text-base font-bold text-[#1d1d1f] tracking-tight">
+                  Curriculum Coming Soon
+                </h3>
+                <p className="text-xs text-zinc-400 font-semibold max-w-sm leading-relaxed">
+                  Interactive experiments and study material for &quot;{level.title}&quot; are currently being designed.
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

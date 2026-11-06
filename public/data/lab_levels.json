@@ -2,10 +2,21 @@
   {
     "id": 1,
     "title": "Level 1: Lets Know States of Matter",
-    "subtitle": "New curriculum coming soon",
-    "isLocked": true,
+    "subtitle": "Learn what is matter and how every matter works",
+    "isLocked": false,
     "color": "from-blue-500/10 to-indigo-500/10 border-blue-200/50 text-blue-600",
-    "sections": []
+    "sections": [
+      {
+        "id": 1,
+        "title": "Three States of Matter",
+        "description": "Anything that has mass and takes up space is called matter. Learn how temperature and intermolecular attraction govern solids, liquids, and gases.",
+        "category": "Core Theory",
+        "time": "6-8 min",
+        "xp": 50,
+        "image": "/images/states_of_matter_icon.png",
+        "actionText": "Explore"
+      }
+    ]
   },
   {
     "id": 2,
